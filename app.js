@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = 2626;
@@ -11,6 +12,7 @@ app.use(morgan('dev'));
 
 // bodyparser
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //____________________ROUTES____________________//
 app.use('/users', require('./routes/users'));
