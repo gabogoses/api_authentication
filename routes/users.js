@@ -4,7 +4,6 @@ const passport = require('passport');
 
 const passportSetup = require('../passport');
 const { validateBody, schemas } = require('../helpers/routesHelpers');
-
 const UsersController = require('../controllers/users');
 
 router
