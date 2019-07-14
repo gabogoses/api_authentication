@@ -1,0 +1,31 @@
+{
+  "name": "apiauthentication",
+  "version": "1.0.0",
+  "description": "API Authentication 🔐 made with Node.js and Passport.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabogoses/api_authentication.git"
+  },
+  "keywords": [
+    "API",
+    "Node.js",
+    "Passport.js"
+  ],
+  "author": "Gabo Goses 👨‍🎤",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabogoses/api_authentication/issues"
+  },
+  "homepage": "https://github.com/gabogoses/api_authentication#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-promise-router": "^3.0.3",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1"
+  }
+}
