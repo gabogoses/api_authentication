@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 app.use('/users', require('./routes/users'));
 
 //___________________DATABASE___________________//
+console.log(keys.mongodb.dbURI);
 mongoose.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, () => {
   console.log('Connected to MongoDB');
 });
