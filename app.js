@@ -18,16 +18,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //____________________ROUTES____________________//
+
 app.use('/users', require('./routes/users'));
 
 //___________________DATABASE___________________//
-console.log(keys.mongodb.dbURI);
+
 mongoose.connect(keys.mongodb.dbURI, { useNewUrlParser: true }, () => {
   console.log('Connected to MongoDB');
 });
 mongoose.set('useCreateIndex', true);
 
 //____________________SERVER____________________//
+
 app.listen(PORT, () => {
   console.log(`Alive on http://localhost:${PORT} 🦖`);
 });

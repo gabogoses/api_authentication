@@ -34,5 +34,8 @@ module.exports = {
 
   signIn: async (req, res, next) => {},
 
-  secret: async (req, res, next) => {}
+  secret: async (req, res, next) => {
+    console.log('gabo is the best');
+    res.json({ msg: 'Yo! 🔥' });
+  }
 };
