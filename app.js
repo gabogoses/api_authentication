@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//____________________ROUTES____________________//
+//____________________ROUTES____________________; //
 
 app.use('/users', require('./routes/users'));
 

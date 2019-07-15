@@ -19,12 +19,19 @@ module.exports = {
   signUp: async (req, res, next) => {
     const { username, email, password } = req.value.body;
 
-    const foundUser = await User.findOne({ email });
+    const foundUser = await User.findOne({ 'local.email': email });
     if (foundUser) {
       return res.status(403).json({ error: 'Email already registered' });
     }
 
-    const newUser = new User({ username, email, password });
+    const newUser = new User({
+      method: 'local',
+      local: {
+        username: username,
+        email: email,
+        password: password
+      }
+    });
     await newUser.save();
 
     const token = signToken(newUser);
@@ -33,6 +40,16 @@ module.exports = {
   },
 
   signIn: async (req, res, next) => {
+    const token = signToken(req.user);
+    res.status(200).json({ token });
+  },
+
+  googleOAuth: async (req, res, next) => {
+    const token = signToken(req.user);
+    res.status(200).json({ token });
+  },
+
+  facebookOAuth: async (req, res, next) => {
     const token = signToken(req.user);
     res.status(200).json({ token });
   },

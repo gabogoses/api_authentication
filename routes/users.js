@@ -25,4 +25,19 @@ router
     UsersController.secret
   );
 
+router
+  .route('/oauth/google')
+  .post(
+    passport.authenticate(
+      'google',
+      { scope: ['profile', 'email'] },
+      { session: false }
+    ),
+    UsersController.googleOAuth
+  );
+
+router
+  .route('/oauth/facebook')
+  .post(passport.authenticate('facebook'), UsersController.facebookOAuth);
+
 module.exports = router;
